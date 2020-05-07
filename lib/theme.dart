@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 ThemeData appTheme() {
   return ThemeData(
-    primarySwatch: Colors.blue,
+    primarySwatch: Colors.red,
     visualDensity: VisualDensity.adaptivePlatformDensity,
   );
 }

@@ -52,7 +52,10 @@ class AboutAPP extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AboutListTile(
-      icon: Icon(Icons.info),
+      icon: Icon(
+        Icons.info,
+        color: Colors.red[700],
+      ),
       applicationIcon: svgIcon,
       applicationName: "My Dices App",
       applicationVersion: "1.0.0",

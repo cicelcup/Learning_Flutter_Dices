@@ -7,8 +7,10 @@ class MyDicesApp extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       drawer: Drawer(
-        child: SafeArea(
-          child: AboutAPP(),
+        child: DrawerHeader(
+          child: SafeArea(
+            child: AboutAPP(),
+          ),
         ),
       ),
       body: Center(
