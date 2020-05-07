@@ -6,6 +6,7 @@ import 'package:url_launcher/url_launcher.dart';
 class AboutAPP extends StatelessWidget {
   static const urlTraining = "https://www.appbrewery.co/";
   static const urlIcon = "https://www.flaticon.com";
+  static const urlDices = "https://icons8.com";
 
   final Widget svgIcon = Container(
     width: 32.0,
@@ -65,6 +66,7 @@ class AboutAPP extends StatelessWidget {
             "Development Using Dart' en:",
             urlTraining),
         createRight("Icon made by Freepik from", urlIcon),
+        createRight("Dices Icons by", urlDices),
       ],
     );
   }
