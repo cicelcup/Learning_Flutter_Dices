@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 import 'about.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -43,8 +44,20 @@ class DicePage extends StatefulWidget {
 }
 
 class _DicePageState extends State<DicePage> {
-  int leftDice = 2;
-  int rightDice = 5;
+  int leftDice;
+  int rightDice;
+
+  void setDices() {
+    leftDice = Random().nextInt(6);
+    rightDice = Random().nextInt(6);
+  }
+
+  @override
+  void initState() {
+    setDices();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width / 2.5;
@@ -55,26 +68,24 @@ class _DicePageState extends State<DicePage> {
         FlatButton(
           onPressed: () {
             setState(() {
-              leftDice = 1;
+              setDices();
             });
-            print("Left dice");
           },
           child: SvgPicture.asset(
-            dices[leftDice - 1].image,
-            color: dices[leftDice - 1].color,
+            dices[leftDice].image,
+            color: dices[leftDice].color,
             width: screenWidth,
           ),
         ),
         FlatButton(
           onPressed: () {
             setState(() {
-              rightDice = 4;
+              setDices();
             });
-            print("Right dice");
           },
           child: SvgPicture.asset(
-            dices[rightDice - 1].image,
-            color: dices[rightDice - 1].color,
+            dices[rightDice].image,
+            color: dices[rightDice].color,
             width: screenWidth,
           ),
         )
