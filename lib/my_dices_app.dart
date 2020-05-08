@@ -37,19 +37,26 @@ class MyDicesApp extends StatelessWidget {
   }
 }
 
-class DicePage extends StatelessWidget {
+class DicePage extends StatefulWidget {
+  @override
+  _DicePageState createState() => _DicePageState();
+}
+
+class _DicePageState extends State<DicePage> {
+  int leftDice = 2;
+  int rightDice = 5;
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width / 2.5;
-    var leftDice = 2;
-    var rightDice = 6;
-
     return Center(
         child: Row(
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
         FlatButton(
           onPressed: () {
+            setState(() {
+              leftDice = 1;
+            });
             print("Left dice");
           },
           child: SvgPicture.asset(
@@ -60,6 +67,9 @@ class DicePage extends StatelessWidget {
         ),
         FlatButton(
           onPressed: () {
+            setState(() {
+              rightDice = 4;
+            });
             print("Right dice");
           },
           child: SvgPicture.asset(
